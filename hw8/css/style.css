@@ -1,74 +1,86 @@
-body {
-    background-color: #f2f2f2;
-    margin: 0;
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__nav {
+    text-align: center;
+}
+
+.header__nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
     padding: 0;
+    margin: 8% 0 0 0;
+}
+
+.header__nav-item {
+    font-size: 1.2rem;
+    margin-right: 60%;
+}
+
+.header__nav-item a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.header__nav-item a:hover {
+    color: #ff6600;
+}
+
+.wrapper {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 5% 0;
 }
 
-.container {
-    display: flex;
-    max-width: 100%;
-    background-color: #fff;
-    margin-top: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sun-container,
-.content-container,
-.map-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    margin-left: 100px;
-}
-
-.content-container {
-    padding-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-.map {
-    width: 300px;
-    margin-top: 20px;
+.container__sun {
+    width: 600px;
+    height: 400px;
+    background-color: 224, 221, 211;
+    margin: 5% 10%;
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
 }
 
 .sun {
     width: 100px;
     height: 100px;
-    background-color: #ffdb58;
+    background-color: yellow;
     border-radius: 50%;
     position: relative;
     transition: transform 0.5s ease;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 25% auto;
+    cursor: pointer;
+}
+
+.sun:hover {
+    transform: rotate(360deg);
 }
 
 .eye {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-color: black;
     border-radius: 50%;
     position: absolute;
-    top: 30%;
 }
 
-.eye--left {
-    left: 18%;
+.left-eye {
+    top: 35px;
+    left: 30px;
 }
 
-.eye--right {
-    right: 18%;
+.right-eye {
+    top: 35px;
+    right: 30px;
 }
 
 .mouth {
@@ -76,19 +88,50 @@ body {
     height: 5px;
     background-color: black;
     position: absolute;
-    top: 60%;
-    left: 30%;
-    transform: rotate(0deg);
-    transform-origin: left center;
+    top: 60px;
+    left: 30px;
 }
 
-.sun:hover {
-    transform: rotate(360deg);
+.moving-sun {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: relative;
+    animation: moveSun 5s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25% auto;
 }
 
-.video {
-    margin: 20px 0;
-    text-align: center;
+@keyframes moveSun {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    25% {
+        transform: translateX(100px) scale(1.2);
+    }
+    50% {
+        transform: translateX(200px) scale(1);
+    }
+    75% {
+        transform: translateX(100px) scale(0.8);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
 }
 
+/* Вторая странциа */
 
+.container__media {
+    display: flex;
+    width: 400px;
+    height: 400px;
+    background-color: 224, 221, 211;
+    margin: 5% 5%;
+    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+    justify-content: center;
+    align-items: center;
+}
